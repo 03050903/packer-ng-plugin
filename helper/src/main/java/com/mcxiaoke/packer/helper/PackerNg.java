@@ -366,6 +366,7 @@ public final class PackerNg {
         Helper.println("command args: " + Arrays.toString(args));
         File apkFile = new File(args[0]);
         final File marketFile = new File(args[1]);
+        File outputDir = new File(args[2]);
         if (!apkFile.exists()) {
             Helper.println("apk file:" + apkFile + " not exists or not readable");
             System.exit(1);
@@ -387,7 +388,6 @@ public final class PackerNg {
         Helper.println("markets: " + markets);
         final String baseName = Helper.getBaseName(apkFile.getName());
         final String extName = Helper.getExtension(apkFile.getName());
-        final File outputDir = new File("apks");
         if (!outputDir.exists()) {
             outputDir.mkdirs();
         } else {
